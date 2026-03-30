@@ -4,7 +4,7 @@ Tags: ai, azure, foundry, ai-provider, connectors
 Requires at least: 7.0
 Tested up to: 7.0
 Requires PHP: 8.3
-Stable tag: 0.3.0
+Stable tag: 0.3.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,9 @@ The plugin supports five capabilities: `text_generation`, `chat_history`, `image
 The plugin uses `2025-04-01-preview` for the Azure OpenAI surface. This is hardcoded and not user-configurable.
 
 == Changelog ==
+
+= 0.3.1 =
+* Fixed connector description to list all supported capabilities instead of only text generation.
 
 = 0.3.0 =
 * Simplified settings to API Key and Endpoint URL only — model names and capabilities are auto-detected.

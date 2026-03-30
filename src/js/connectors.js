@@ -406,6 +406,6 @@ function CloudIcon() {
 // Slug format: {type}/{id} — matches the AI Client provider slug.
 registerConnector( 'ai_provider/azure-ai-foundry', {
 	name: __( 'Azure AI Foundry', 'azure-ai-foundry' ),
-	description: __( 'Connect to Azure AI Foundry Model Inference API for text generation.', 'azure-ai-foundry' ),
+	description: __( 'Connect to Azure AI Foundry Model Inference API for text generation, image generation, embeddings, text-to-speech, and more.', 'azure-ai-foundry' ),
 	render: AzureAiFoundryConnector,
 } );
