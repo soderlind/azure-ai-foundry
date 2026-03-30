@@ -18,9 +18,9 @@ Azure AI Foundry Connector registers an AI provider with the WordPress 7.0 AI Cl
 
 * **AI Client integration** — usable via `wp_ai_client_prompt()` and the Settings → Connectors page.
 * **OpenAI-compatible** — uses the Azure AI Foundry `/chat/completions` endpoint.
-* **Capability detection** — auto-detects model capabilities (text generation, chat history, image generation, embeddings, text-to-speech) from Azure endpoints.
+* **Capability detection** — auto-detects deployed models and capabilities (text generation, chat history, image generation, embeddings, text-to-speech) by probing the Azure endpoint.
 * **Multiple endpoint types** — supports Azure AI Services, Azure OpenAI, and Cognitive Services endpoints.
-* **Auto-detection** — discovers the deployed model name via the `/info` endpoint.
+* **Auto-detection** — discovers all deployed models via POST-based probing. No manual model name or API version configuration needed.
 * **Custom authentication** — sends the `api-key` header required by Azure.
 * **Endpoint validation** — validates Azure endpoint URLs with inline error messages.
 * **Environment variable fallback** — every setting can be overridden via environment variables or `wp-config.php` constants.
@@ -72,7 +72,7 @@ Yes. Set any of these environment variables or define them as constants in `wp-c
 
 = What capabilities are supported? =
 
-The plugin supports five capabilities: `text_generation`, `chat_history`, `image_generation`, `embedding_generation`, and `text_to_speech_conversion`. By default, `text_generation` and `chat_history` are enabled. Use "Detect from Endpoint" to discover capabilities automatically.
+The plugin supports five capabilities: `text_generation`, `chat_history`, `image_generation`, `embedding_generation`, and `text_to_speech_conversion`. By default, `text_generation` and `chat_history` are enabled. Use "Connect & Detect" to discover capabilities automatically.
 
 = What API version is used? =
 

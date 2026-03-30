@@ -6,13 +6,13 @@ Connect WordPress 7.0+ to [Azure AI Foundry](https://learn.microsoft.com/en-us/r
 
 - **AI Client integration** — registers as a WordPress 7.0 AI provider, usable via `wp_ai_client_prompt()` and Settings → Connectors.
 - **OpenAI-compatible** — uses the Azure AI Foundry `/chat/completions` endpoint which follows the OpenAI chat format.
-- **Capability detection** — auto-detects model capabilities (text generation, chat history, image generation, embeddings, text-to-speech) from Azure endpoints.
+- **Capability detection** — auto-detects deployed models and capabilities (text generation, chat history, image generation, embeddings, text-to-speech) by probing the Azure endpoint.
 - **Multiple endpoint types** — supports Azure AI Services (`.services.ai.azure.com`), Azure OpenAI (`.openai.azure.com`), and Cognitive Services (`.cognitiveservices.azure.com`).
-- **Auto-detection** — discovers the deployed model name via the `/info` endpoint when no model is explicitly configured.
+- **Auto-detection** — discovers all deployed models via POST-based probing. No manual model name or API version configuration needed.
 - **Custom authentication** — sends the `api-key` header required by Azure (instead of `Authorization: Bearer`).
 - **Endpoint validation** — validates Azure endpoint URLs and shows inline errors for invalid URLs.
 - **Environment variable fallback** — every setting can be overridden via environment variables or `wp-config.php` constants.
-- **Connectors page UI** — custom React-based connector on the Settings → Connectors page with fields for API key, endpoint URL, model name, API version, and detected capabilities displayed as read-only chips.
+- **Connectors page UI** — custom React-based connector on the Settings → Connectors page with fields for API key and endpoint URL. Detected deployments and capabilities displayed as read-only chips.
 
 ## Requirements
 
@@ -27,23 +27,20 @@ Connect WordPress 7.0+ to [Azure AI Foundry](https://learn.microsoft.com/en-us/r
 3. Go to **Settings → Connectors** and configure:
    - **API Key** — your Azure AI Foundry API key.
    - **Endpoint URL** — e.g. `https://my-resource.services.ai.azure.com/models`.
-   - **Model Name** — (optional) leave empty to auto-detect.
-   - **API Version** — defaults to `2024-05-01-preview`.
-4. Click **Detect from Endpoint** to auto-detect model capabilities, or leave the defaults (text generation + chat history).
+4. Click **Connect & Detect** — the plugin probes your endpoint, discovers deployed models, and saves the configuration automatically.
 
 ## Configuration via Environment Variables
 
 Settings can also be provided via environment variables or constants in `wp-config.php`:
 
-| Setting     | Environment Variable              | wp-config.php Constant            |
-|-------------|-----------------------------------|-----------------------------------|
-| API Key     | `AZURE_AI_FOUNDRY_API_KEY`        | `AZURE_AI_FOUNDRY_API_KEY`        |
-| Endpoint    | `AZURE_AI_FOUNDRY_ENDPOINT`       | `AZURE_AI_FOUNDRY_ENDPOINT`       |
-| Model Name  | `AZURE_AI_FOUNDRY_MODEL`          | `AZURE_AI_FOUNDRY_MODEL`          |
-| API Version | `AZURE_AI_FOUNDRY_API_VERSION`    | `AZURE_AI_FOUNDRY_API_VERSION`    |
-| Capabilities| `AZURE_AI_FOUNDRY_CAPABILITIES`   | `AZURE_AI_FOUNDRY_CAPABILITIES`   |
+| Setting      | Environment Variable              | wp-config.php Constant            |
+|--------------|-----------------------------------|-----------------------------------|
+| API Key      | `AZURE_AI_FOUNDRY_API_KEY`        | `AZURE_AI_FOUNDRY_API_KEY`        |
+| Endpoint     | `AZURE_AI_FOUNDRY_ENDPOINT`       | `AZURE_AI_FOUNDRY_ENDPOINT`       |
+| Model Names  | `AZURE_AI_FOUNDRY_MODEL`          | `AZURE_AI_FOUNDRY_MODEL`          |
+| Capabilities | `AZURE_AI_FOUNDRY_CAPABILITIES`   | `AZURE_AI_FOUNDRY_CAPABILITIES`   |
 
-Capabilities can be set as a comma-separated string, e.g. `text_generation,chat_history,image_generation`.
+Model names and capabilities are normally auto-detected. Use these overrides only when you need to pin specific values. Model names accept comma-separated deployment names, e.g. `gpt-4.1,gpt-image-1`. Capabilities accept a comma-separated string, e.g. `text_generation,chat_history,image_generation`.
 
 ## Usage
 
