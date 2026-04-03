@@ -101,6 +101,10 @@ azure-ai-foundry/
 └── vitest.config.js                  ← Test config
 ```
 
+## Documentation
+
+- [How to Build an AI Provider Plugin for WordPress 7](docs/how-to-add-ai-provider.md) — deep-dive into provider registration, settings, authentication, and the Connectors page UI.
+
 ## License
 
 GPL-2.0-or-later
