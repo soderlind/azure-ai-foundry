@@ -5,11 +5,11 @@
  * Description: Connect WordPress to Azure AI Foundry Model Inference API for text generation, embeddings, and more.
  * Requires at least: 7.0
  * Requires PHP: 8.3
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: Per Søderlind
  * Author URI: https://soderlind.no/
  * License: GPL-2.0-or-later
- * Text Domain: azure-ai-foundry
+ * Text Domain: ai-provider-for-azure-ai-foundry
  */
 
 namespace AzureAiFoundry;
@@ -24,17 +24,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	return;
 }
 
-define( 'AZURE_AI_FOUNDRY_VERSION', '1.0.0' );
+define( 'AZURE_AI_FOUNDRY_VERSION', '1.1.0' );
 define( 'AZURE_AI_FOUNDRY_FILE', __FILE__ );
 define( 'AZURE_AI_FOUNDRY_AI_PLUGIN_SENTINEL_ID', 'azure_ai_foundry_status' );
 define( 'AZURE_AI_FOUNDRY_AI_PLUGIN_SENTINEL_OPTION', 'connectors_ai_azure_ai_foundry_status_api_key' );
 
 require_once __DIR__ . '/src/autoload.php';
-
-// Composer autoloader (provides yahnis-elsts/plugin-update-checker).
-if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
-	require_once __DIR__ . '/vendor/autoload.php';
-}
 
 /**
  * Detect whether the loaded ProviderMetadata class is missing methods
@@ -64,24 +59,12 @@ function show_ai_client_conflict_notice(): void {
 		'<div class="notice notice-error"><p>%s</p></div>',
 		esc_html__(
 			'Azure AI Foundry Connector: A conflicting AI client library was detected. Please deactivate the "AI Experiments" plugin — its outdated library overrides the version built into WordPress 7.0.',
-			'azure-ai-foundry'
+			'ai-provider-for-azure-ai-foundry'
 		)
 	);
 }
 add_action( 'admin_notices', __NAMESPACE__ . '\\show_ai_client_conflict_notice' );
 add_action( 'network_admin_notices', __NAMESPACE__ . '\\show_ai_client_conflict_notice' );
-
-// GitHub Updater — automatic updates from GitHub releases.
-if ( ! class_exists( \Soderlind\WordPress\GitHubUpdater::class ) ) {
-	require_once __DIR__ . '/class-github-plugin-updater.php';
-}
-\Soderlind\WordPress\GitHubUpdater::init(
-	github_url:  'https://github.com/soderlind/azure-ai-foundry',
-	plugin_file: __FILE__,
-	plugin_slug: 'azure-ai-foundry',
-	name_regex:  '/azure-ai-foundry\.zip/',
-	branch:      'main',
-);
 
 /**
  * Register the provider with the AI Client registry early.
@@ -203,8 +186,8 @@ function unregister_from_connector_registry( \WP_Connector_Registry $registry ):
 		$registry->register(
 			AZURE_AI_FOUNDRY_AI_PLUGIN_SENTINEL_ID,
 			[
-				'name'           => __( 'Azure AI Foundry Status', 'azure-ai-foundry' ),
-				'description'    => __( 'Internal compatibility connector for AI plugin detection.', 'azure-ai-foundry' ),
+				'name'           => __( 'Azure AI Foundry Status', 'ai-provider-for-azure-ai-foundry' ),
+				'description'    => __( 'Internal compatibility connector for AI plugin detection.', 'ai-provider-for-azure-ai-foundry' ),
 				'type'           => 'ai_provider',
 				'authentication' => [
 					'method' => 'api_key',

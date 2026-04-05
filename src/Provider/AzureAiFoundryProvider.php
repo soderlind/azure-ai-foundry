@@ -137,7 +137,7 @@ class AzureAiFoundryProvider extends AbstractApiProvider {
 	protected static function createProviderMetadata(): ProviderMetadata {
 		return new ProviderMetadata(
 			'azure-ai-foundry',
-			__( 'Azure AI Foundry', 'azure-ai-foundry' ),
+			__( 'Azure AI Foundry', 'ai-provider-for-azure-ai-foundry' ),
 			ProviderTypeEnum::cloud(),
 			'https://ai.azure.com/',
 			RequestAuthenticationMethod::apiKey()

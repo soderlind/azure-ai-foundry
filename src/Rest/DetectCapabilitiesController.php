@@ -72,7 +72,7 @@ class DetectCapabilitiesController {
 		if ( empty( $endpoint ) || empty( $api_key ) ) {
 			return new WP_Error(
 				'missing_credentials',
-				__( 'Endpoint and API key are required.', 'azure-ai-foundry' ),
+				__( 'Endpoint and API key are required.', 'ai-provider-for-azure-ai-foundry' ),
 				[ 'status' => 400 ]
 			);
 		}
@@ -92,7 +92,7 @@ class DetectCapabilitiesController {
 		if ( null === $result ) {
 			return new WP_Error(
 				'detection_failed',
-				__( 'Could not detect capabilities from the endpoint. Verify the URL and API key.', 'azure-ai-foundry' ),
+				__( 'Could not detect capabilities from the endpoint. Verify the URL and API key.', 'ai-provider-for-azure-ai-foundry' ),
 				[ 'status' => 422 ]
 			);
 		}

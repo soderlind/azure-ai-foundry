@@ -1,0 +1,224 @@
+# Norwegian Bokmål translation for Azure AI Foundry Connector
+# Copyright (C) 2026 Per Søderlind
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Azure AI Foundry Connector 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/azure-ai-foundry\n"
+"Last-Translator: Per Søderlind <per@soderlind.no>\n"
+"Language-Team: Norwegian Bokmål\n"
+"Language: nb_NO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-04-05T13:39:21+00:00\n"
+"PO-Revision-Date: 2026-04-05 15:00+0200\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: ai-provider-for-azure-ai-foundry\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Plugin Name of the plugin
+#: ai-provider-for-azure-ai-foundry.php
+msgid "Azure AI Foundry Connector"
+msgstr "Azure AI Foundry-kobling"
+
+#. Plugin URI of the plugin
+#: ai-provider-for-azure-ai-foundry.php
+msgid "https://github.com/soderlind/azure-ai-foundry"
+msgstr "https://github.com/soderlind/azure-ai-foundry"
+
+#. Description of the plugin
+#: ai-provider-for-azure-ai-foundry.php
+msgid "Connect WordPress to Azure AI Foundry Model Inference API for text generation, embeddings, and more."
+msgstr "Koble WordPress til Azure AI Foundry Model Inference API for tekstgenerering, innbygging og mer."
+
+#. Author of the plugin
+#: ai-provider-for-azure-ai-foundry.php
+msgid "Per Søderlind"
+msgstr "Per Søderlind"
+
+#. Author URI of the plugin
+#: ai-provider-for-azure-ai-foundry.php
+msgid "https://soderlind.no/"
+msgstr "https://soderlind.no/"
+
+#: ai-provider-for-azure-ai-foundry.php:65
+msgid "Azure AI Foundry Connector: A conflicting AI client library was detected. Please deactivate the \"AI Experiments\" plugin — its outdated library overrides the version built into WordPress 7.0."
+msgstr "Azure AI Foundry-kobling: Et konflikterende AI-klientbibliotek ble oppdaget. Deaktiver utvidelsen «AI Experiments» — det utdaterte biblioteket overstyrer versjonen som er innebygd i WordPress 7.0."
+
+#: ai-provider-for-azure-ai-foundry.php:206
+msgid "Azure AI Foundry Status"
+msgstr "Azure AI Foundry-status"
+
+#: ai-provider-for-azure-ai-foundry.php:207
+msgid "Internal compatibility connector for AI plugin detection."
+msgstr "Intern kompatibilitetskobling for AI-utvidelsesdeteksjon."
+
+#: src/Metadata/AzureAiFoundryModelMetadataDirectory.php:72
+msgid "Azure AI Foundry Model"
+msgstr "Azure AI Foundry-modell"
+
+#: src/Provider/AzureAiFoundryProvider.php:140
+#: build/connectors.js:1
+#: src/js/connectors.js:432
+msgid "Azure AI Foundry"
+msgstr "Azure AI Foundry"
+
+#: src/Rest/DetectCapabilitiesController.php:75
+msgid "Endpoint and API key are required."
+msgstr "Endepunkt og API-nøkkel er påkrevd."
+
+#: src/Rest/DetectCapabilitiesController.php:95
+msgid "Could not detect capabilities from the endpoint. Verify the URL and API key."
+msgstr "Kunne ikke oppdage funksjoner fra endepunktet. Kontroller URL-en og API-nøkkelen."
+
+#: src/Settings/ConnectorSettings.php:42
+msgid "Azure AI Foundry API Key"
+msgstr "Azure AI Foundry API-nøkkel"
+
+#: src/Settings/ConnectorSettings.php:43
+msgid "API key for Azure AI Foundry Model Inference."
+msgstr "API-nøkkel for Azure AI Foundry Model Inference."
+
+#: src/Settings/ConnectorSettings.php:60
+#: build/connectors.js:1
+#: src/js/connectors.js:296
+msgid "Endpoint URL"
+msgstr "Endepunkt-URL"
+
+#: src/Settings/ConnectorSettings.php:61
+msgid "Azure AI resource URL (e.g. https://my-resource.services.ai.azure.com)."
+msgstr "Azure AI-ressurs-URL (f.eks. https://min-ressurs.services.ai.azure.com)."
+
+#: src/Settings/ConnectorSettings.php:74
+msgid "Model Name"
+msgstr "Modellnavn"
+
+#: src/Settings/ConnectorSettings.php:75
+msgid "Auto-detected deployment names."
+msgstr "Automatisk oppdagede distribusjonsnavn."
+
+#: src/Settings/ConnectorSettings.php:88
+#: build/connectors.js:1
+#: src/js/connectors.js:380
+msgid "Capabilities"
+msgstr "Funksjoner"
+
+#: src/Settings/ConnectorSettings.php:89
+msgid "Capabilities supported by the Azure AI Foundry deployment."
+msgstr "Funksjoner støttet av Azure AI Foundry-distribusjonen."
+
+#: build/connectors.js:1
+#: src/js/connectors.js:36
+msgid "Text Generation"
+msgstr "Tekstgenerering"
+
+#: build/connectors.js:1
+#: src/js/connectors.js:37
+msgid "Chat History"
+msgstr "Samtalehistorikk"
+
+#: build/connectors.js:1
+#: src/js/connectors.js:38
+msgid "Image Generation"
+msgstr "Bildegenerering"
+
+#: build/connectors.js:1
+#: src/js/connectors.js:39
+msgid "Embedding Generation"
+msgstr "Innbyggingsgenerering"
+
+#: build/connectors.js:1
+#: src/js/connectors.js:40
+msgid "Text-to-Speech"
+msgstr "Tekst-til-tale"
+
+#: build/connectors.js:1
+#: src/js/connectors.js:433
+msgid "Connect to Azure AI Foundry Model Inference API for text generation, image generation, embeddings, text-to-speech, and more."
+msgstr "Koble til Azure AI Foundry Model Inference API for tekstgenerering, bildegenerering, innbygging, tekst-til-tale og mer."
+
+#: build/connectors.js:1
+#: src/js/connectors.js:93
+msgid "Could not save the API key."
+msgstr "Kunne ikke lagre API-nøkkelen."
+
+#: build/connectors.js:1
+#: src/js/connectors.js:267
+#: src/js/connectors.js:269
+msgid "API Key"
+msgstr "API-nøkkel"
+
+#: build/connectors.js:1
+#: src/js/connectors.js:290
+msgid "Remove and replace"
+msgstr "Fjern og erstatt"
+
+#: build/connectors.js:1
+#: src/js/connectors.js:301
+msgid "Your Azure AI resource URL. Deployments and capabilities are auto-detected."
+msgstr "Din Azure AI-ressurs-URL. Distribusjoner og funksjoner oppdages automatisk."
+
+#: build/connectors.js:1
+#: src/js/connectors.js:302
+msgid "URL must be an Azure endpoint (*.services.ai.azure.com, *.openai.azure.com, or *.cognitiveservices.azure.com)."
+msgstr "URL-en må være et Azure-endepunkt (*.services.ai.azure.com, *.openai.azure.com eller *.cognitiveservices.azure.com)."
+
+#: build/connectors.js:1
+#: src/js/connectors.js:210
+msgid "Detection failed. Check endpoint and API key."
+msgstr "Deteksjon mislyktes. Kontroller endepunkt og API-nøkkel."
+
+#: build/connectors.js:1
+#: src/js/connectors.js:321
+msgid "Save & Re-detect"
+msgstr "Lagre og oppdage på nytt"
+
+#: build/connectors.js:1
+#: src/js/connectors.js:322
+msgid "Connect & Detect"
+msgstr "Koble til og oppdage"
+
+#: build/connectors.js:1
+#: src/js/connectors.js:346
+msgid "Detected Configuration"
+msgstr "Oppdaget konfigurasjon"
+
+#: build/connectors.js:1
+#: src/js/connectors.js:232
+msgid "Detection failed."
+msgstr "Deteksjon mislyktes."
+
+#: build/connectors.js:1
+#: src/js/connectors.js:354
+msgid "Refresh"
+msgstr "Oppdater"
+
+#: build/connectors.js:1
+#: src/js/connectors.js:360
+msgid "Deployments"
+msgstr "Distribusjoner"
+
+#: src/js/connectors.js:205
+msgid "Connected but no capabilities detected."
+msgstr "Tilkoblet, men ingen funksjoner ble oppdaget."
+
+#: src/js/connectors.js:227
+msgid "No capabilities detected."
+msgstr "Ingen funksjoner oppdaget."
+
+#: src/js/connectors.js:251
+msgid "Edit"
+msgstr "Rediger"
+
+#: src/js/connectors.js:252
+msgid "Set Up"
+msgstr "Konfigurer"
+
+#: src/js/connectors.js:277
+msgid "Your API key is stored securely. You can replace it if needed."
+msgstr "API-nøkkelen din er lagret sikkert. Du kan erstatte den om nødvendig."
+
+#: src/js/connectors.js:278
+msgid "Get your API key from Azure AI Foundry."
+msgstr "Hent API-nøkkelen din fra Azure AI Foundry."

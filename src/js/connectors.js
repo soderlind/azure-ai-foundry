@@ -33,11 +33,11 @@ const ALL_OPTIONS = [
 ].join( ',' );
 
 const CAPABILITY_LABELS = {
-	text_generation: __( 'Text Generation', 'azure-ai-foundry' ),
-	chat_history: __( 'Chat History', 'azure-ai-foundry' ),
-	image_generation: __( 'Image Generation', 'azure-ai-foundry' ),
-	embedding_generation: __( 'Embedding Generation', 'azure-ai-foundry' ),
-	text_to_speech_conversion: __( 'Text-to-Speech', 'azure-ai-foundry' ),
+	text_generation: __( 'Text Generation', 'ai-provider-for-azure-ai-foundry' ),
+	chat_history: __( 'Chat History', 'ai-provider-for-azure-ai-foundry' ),
+	image_generation: __( 'Image Generation', 'ai-provider-for-azure-ai-foundry' ),
+	embedding_generation: __( 'Embedding Generation', 'ai-provider-for-azure-ai-foundry' ),
+	text_to_speech_conversion: __( 'Text-to-Speech', 'ai-provider-for-azure-ai-foundry' ),
 };
 
 /**
@@ -90,7 +90,7 @@ function useAzureSettings() {
 		} );
 		const returned = result[ API_KEY_OPTION ] || '';
 		if ( returned === apiKey && newKey !== '' ) {
-			throw new Error( __( 'Could not save the API key.', 'azure-ai-foundry' ) );
+			throw new Error( __( 'Could not save the API key.', 'ai-provider-for-azure-ai-foundry' ) );
 		}
 		setApiKey( returned );
 	}, [ apiKey ] );
@@ -201,13 +201,13 @@ function AzureAiFoundryConnector( { slug, name, description, logo } ) {
 			const models = result.model_name || '';
 			setStatusMessage(
 				capCount
-					? __( 'Connected — detected ' + capCount + ' capability(s) and ' + models.split( ',' ).length + ' deployment(s).', 'azure-ai-foundry' )
-					: __( 'Connected but no capabilities detected.', 'azure-ai-foundry' )
+					? __( 'Connected — detected ' + capCount + ' capability(s) and ' + models.split( ',' ).length + ' deployment(s).', 'ai-provider-for-azure-ai-foundry' )
+					: __( 'Connected but no capabilities detected.', 'ai-provider-for-azure-ai-foundry' )
 			);
 			setStatusType( capCount ? 'success' : 'error' );
 		} catch ( e ) {
 			setStatusMessage(
-				e.message || __( 'Detection failed. Check endpoint and API key.', 'azure-ai-foundry' )
+				e.message || __( 'Detection failed. Check endpoint and API key.', 'ai-provider-for-azure-ai-foundry' )
 			);
 			setStatusType( 'error' );
 		} finally {
@@ -223,13 +223,13 @@ function AzureAiFoundryConnector( { slug, name, description, logo } ) {
 			const capCount = result.capabilities?.length || 0;
 			setStatusMessage(
 				capCount
-					? __( 'Refreshed — detected ' + capCount + ' capability(s).', 'azure-ai-foundry' )
-					: __( 'No capabilities detected.', 'azure-ai-foundry' )
+					? __( 'Refreshed — detected ' + capCount + ' capability(s).', 'ai-provider-for-azure-ai-foundry' )
+					: __( 'No capabilities detected.', 'ai-provider-for-azure-ai-foundry' )
 			);
 			setStatusType( capCount ? 'success' : 'error' );
 		} catch ( e ) {
 			setStatusMessage(
-				e.message || __( 'Detection failed.', 'azure-ai-foundry' )
+				e.message || __( 'Detection failed.', 'ai-provider-for-azure-ai-foundry' )
 			);
 			setStatusType( 'error' );
 		} finally {
@@ -248,8 +248,8 @@ function AzureAiFoundryConnector( { slug, name, description, logo } ) {
 	}
 
 	const buttonLabel = isConnected
-		? __( 'Edit', 'azure-ai-foundry' )
-		: __( 'Set Up', 'azure-ai-foundry' );
+		? __( 'Edit', 'ai-provider-for-azure-ai-foundry' )
+		: __( 'Set Up', 'ai-provider-for-azure-ai-foundry' );
 
 	const actionButton = el( Button, {
 		variant: isConnected ? 'tertiary' : 'secondary',
@@ -264,9 +264,9 @@ function AzureAiFoundryConnector( { slug, name, description, logo } ) {
 	// Settings panel (shown when expanded).
 	const settingsPanel = isExpanded && el( 'div', null,
 		// ── API Key ─────────────────────────────────────────
-		el( 'h3', null, __( 'API Key', 'azure-ai-foundry' ) ),
+		el( 'h3', null, __( 'API Key', 'ai-provider-for-azure-ai-foundry' ) ),
 		el( TextControl, {
-			label: __( 'API Key', 'azure-ai-foundry' ),
+			label: __( 'API Key', 'ai-provider-for-azure-ai-foundry' ),
 			value: apiKey,
 			onChange: ( value ) => {
 				setStatusMessage( '' );
@@ -274,8 +274,8 @@ function AzureAiFoundryConnector( { slug, name, description, logo } ) {
 			},
 			placeholder: 'YOUR_API_KEY',
 			help: hasSavedApiKey && ! isReplacingApiKey
-				? __( 'Your API key is stored securely. You can replace it if needed.', 'azure-ai-foundry' )
-				: __( 'Get your API key from Azure AI Foundry.', 'azure-ai-foundry' ),
+				? __( 'Your API key is stored securely. You can replace it if needed.', 'ai-provider-for-azure-ai-foundry' )
+				: __( 'Get your API key from Azure AI Foundry.', 'ai-provider-for-azure-ai-foundry' ),
 			disabled: isDetecting || ( hasSavedApiKey && ! isReplacingApiKey ),
 			__next40pxDefaultSize: true,
 		} ),
@@ -287,19 +287,19 @@ function AzureAiFoundryConnector( { slug, name, description, logo } ) {
 				setIsReplacingApiKey( true );
 				setStatusMessage( '' );
 			},
-		}, __( 'Remove and replace', 'azure-ai-foundry' ) ),
+		}, __( 'Remove and replace', 'ai-provider-for-azure-ai-foundry' ) ),
 
 		el( 'hr' ),
 
 		// ── Endpoint URL ────────────────────────────────────
 		el( TextControl, {
-			label: __( 'Endpoint URL', 'azure-ai-foundry' ),
+			label: __( 'Endpoint URL', 'ai-provider-for-azure-ai-foundry' ),
 			value: endpoint,
 			onChange: setEndpoint,
 			placeholder: 'https://my-resource.services.ai.azure.com',
 			help: isValidAzureEndpoint( endpoint )
-				? __( 'Your Azure AI resource URL. Deployments and capabilities are auto-detected.', 'azure-ai-foundry' )
-				: __( 'URL must be an Azure endpoint (*.services.ai.azure.com, *.openai.azure.com, or *.cognitiveservices.azure.com).', 'azure-ai-foundry' ),
+				? __( 'Your Azure AI resource URL. Deployments and capabilities are auto-detected.', 'ai-provider-for-azure-ai-foundry' )
+				: __( 'URL must be an Azure endpoint (*.services.ai.azure.com, *.openai.azure.com, or *.cognitiveservices.azure.com).', 'ai-provider-for-azure-ai-foundry' ),
 			__next40pxDefaultSize: true,
 			className: isValidAzureEndpoint( endpoint ) ? '' : 'has-error',
 		} ),
@@ -318,8 +318,8 @@ function AzureAiFoundryConnector( { slug, name, description, logo } ) {
 				isBusy: isDetecting,
 				disabled: isDetecting || ! canConnect,
 			}, deploymentNames.length
-				? __( 'Save & Re-detect', 'azure-ai-foundry' )
-				: __( 'Connect & Detect', 'azure-ai-foundry' )
+				? __( 'Save & Re-detect', 'ai-provider-for-azure-ai-foundry' )
+				: __( 'Connect & Detect', 'ai-provider-for-azure-ai-foundry' )
 			),
 			statusMessage && el( 'span', {
 				style: {
@@ -343,7 +343,7 @@ function AzureAiFoundryConnector( { slug, name, description, logo } ) {
 				style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 },
 			},
 				el( 'span', { style: { fontWeight: 600, fontSize: '13px' } },
-					__( 'Detected Configuration', 'azure-ai-foundry' )
+					__( 'Detected Configuration', 'ai-provider-for-azure-ai-foundry' )
 				),
 				el( Button, {
 					variant: 'tertiary',
@@ -351,13 +351,13 @@ function AzureAiFoundryConnector( { slug, name, description, logo } ) {
 					onClick: handleRedetect,
 					isBusy: isDetecting,
 					disabled: isDetecting || ! endpoint || ! apiKey,
-				}, __( 'Refresh', 'azure-ai-foundry' ) ),
+				}, __( 'Refresh', 'ai-provider-for-azure-ai-foundry' ) ),
 			),
 
 			// Deployments.
 			deploymentNames.length > 0 && el( 'div', { style: { marginBottom: 10 } },
 				el( 'span', { style: { fontSize: '12px', color: '#757575', display: 'block', marginBottom: 4 } },
-					__( 'Deployments', 'azure-ai-foundry' )
+					__( 'Deployments', 'ai-provider-for-azure-ai-foundry' )
 				),
 				el( 'div', { style: { display: 'flex', flexWrap: 'wrap', gap: 6 } },
 					...deploymentNames.map( ( dep ) =>
@@ -377,7 +377,7 @@ function AzureAiFoundryConnector( { slug, name, description, logo } ) {
 			// Capabilities.
 			capabilities.length > 0 && el( 'div', null,
 				el( 'span', { style: { fontSize: '12px', color: '#757575', display: 'block', marginBottom: 4 } },
-					__( 'Capabilities', 'azure-ai-foundry' )
+					__( 'Capabilities', 'ai-provider-for-azure-ai-foundry' )
 				),
 				el( 'div', { style: { display: 'flex', flexWrap: 'wrap', gap: 6 } },
 					...capabilities.map( ( cap ) =>
@@ -429,7 +429,7 @@ function CloudIcon() {
 // ── Register ────────────────────────────────────────────────────
 // Slug format: {type}/{id} — matches the AI Client provider slug.
 registerConnector( 'ai_provider/azure-ai-foundry', {
-	name: __( 'Azure AI Foundry', 'azure-ai-foundry' ),
-	description: __( 'Connect to Azure AI Foundry Model Inference API for text generation, image generation, embeddings, text-to-speech, and more.', 'azure-ai-foundry' ),
+	name: __( 'Azure AI Foundry', 'ai-provider-for-azure-ai-foundry' ),
+	description: __( 'Connect to Azure AI Foundry Model Inference API for text generation, image generation, embeddings, text-to-speech, and more.', 'ai-provider-for-azure-ai-foundry' ),
 	render: AzureAiFoundryConnector,
 } );

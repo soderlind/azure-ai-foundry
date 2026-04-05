@@ -1,0 +1,21 @@
+# Directories
+.github/
+node_modules/
+tests/
+src/js/
+
+# Files
+.distignore
+.editorconfig
+.gitattributes
+.gitignore
+composer.json
+composer.lock
+i18n-map.json
+package.json
+package-lock.json
+vitest.config.js
+webpack.config.js
+
+# Patterns
+*.map

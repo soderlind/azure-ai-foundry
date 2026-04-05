@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-04-05
+
+### Changed
+
+- Renamed main plugin file from `azure-ai-foundry.php` to `ai-provider-for-azure-ai-foundry.php` to comply with WordPress plugin naming guidelines.
+- Changed text domain from `azure-ai-foundry` to `ai-provider-for-azure-ai-foundry`.
+- GitHub release artifact renamed from `azure-ai-foundry.zip` to `ai-provider-for-azure-ai-foundry.zip`.
+
+### Added
+
+- Internationalization (i18n) support with npm scripts for generating translation files.
+- Norwegian Bokmål (nb_NO) translation.
+- `languages/` directory for translation files.
+- `.distignore` file to exclude development files from distribution packages.
+
+### Removed
+
+- GitHub Updater support to comply with WordPress plugin naming guidelines.
+
 ## [1.0.0] - 2026-04-03
 
 ### Added
