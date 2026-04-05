@@ -1,5 +1,5 @@
 === AI Provider for Azure AI Foundry ===
-Contributors: suspended
+Contributors: PerS
 Tags: ai, azure, foundry, ai-provider, connectors
 Requires at least: 7.0
 Tested up to: 7.0
