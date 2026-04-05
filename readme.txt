@@ -4,7 +4,7 @@ Tags: ai, azure, foundry, ai-provider, connectors
 Requires at least: 7.0
 Tested up to: 7.0
 Requires PHP: 8.3
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,15 @@ The plugin supports five capabilities: `text_generation`, `chat_history`, `image
 The plugin uses `2025-04-01-preview` for the Azure OpenAI surface. This is hardcoded and not user-configurable.
 
 == Changelog ==
+
+= 1.1.0 =
+* Renamed main plugin file to `ai-provider-for-azure-ai-foundry.php` to comply with WordPress plugin naming guidelines.
+* Changed text domain to `ai-provider-for-azure-ai-foundry`.
+* GitHub release artifact renamed to `ai-provider-for-azure-ai-foundry.zip`.
+* Added internationalization (i18n) support with npm scripts for generating translation files.
+* Added Norwegian Bokmål (nb_NO) translation.
+* Added `.distignore` file to exclude development files from distribution packages.
+* Removed GitHub Updater support to comply with WordPress plugin naming guidelines.
 
 = 1.0.0 =
 * Added embedding generation model — supports text-embedding-ada-002, text-embedding-3-small/large deployments.

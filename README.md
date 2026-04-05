@@ -31,7 +31,7 @@ Connect WordPress 7.0+ to [Azure AI Foundry](https://learn.microsoft.com/en-us/r
 
 ## Installation
 
-1. Download [`azure-ai-foundry.zip`](https://github.com/soderlind/azure-ai-foundry/releases/latest/download/azure-ai-foundry.zip)
+1. Download [`ai-provider-for-azure-ai-foundry.zip`](https://github.com/soderlind/azure-ai-foundry/releases/latest/download/ai-provider-for-azure-ai-foundry.zip)
 2. Upload via  `Plugins → Add New → Upload Plugin`
 3. Activate via `WordPress Admin → Plugins`
 4. Go to **Settings → Connectors** and configure the Azure AI Foundry connector:
@@ -89,7 +89,7 @@ npm run test:watch  # Interactive watch mode
 
 ```
 azure-ai-foundry/
-├── azure-ai-foundry.php              ← Main plugin file
+├── ai-provider-for-azure-ai-foundry.php              ← Main plugin file
 ├── src/
 │   ├── autoload.php                  ← PSR-4 autoloader
 │   ├── Provider/                     ← AI Client provider

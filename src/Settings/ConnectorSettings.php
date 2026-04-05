@@ -39,8 +39,8 @@ class ConnectorSettings {
 			self::OPTION_API_KEY,
 			[
 				'type'              => 'string',
-				'label'             => __( 'Azure AI Foundry API Key', 'azure-ai-foundry' ),
-				'description'       => __( 'API key for Azure AI Foundry Model Inference.', 'azure-ai-foundry' ),
+				'label'             => __( 'Azure AI Foundry API Key', 'ai-provider-for-azure-ai-foundry' ),
+				'description'       => __( 'API key for Azure AI Foundry Model Inference.', 'ai-provider-for-azure-ai-foundry' ),
 				'default'           => '',
 				'show_in_rest'      => true,
 				'sanitize_callback' => 'sanitize_text_field',
@@ -57,8 +57,8 @@ class ConnectorSettings {
 			self::OPTION_ENDPOINT,
 			[
 				'type'              => 'string',
-				'label'             => __( 'Endpoint URL', 'azure-ai-foundry' ),
-				'description'       => __( 'Azure AI resource URL (e.g. https://my-resource.services.ai.azure.com).', 'azure-ai-foundry' ),
+				'label'             => __( 'Endpoint URL', 'ai-provider-for-azure-ai-foundry' ),
+				'description'       => __( 'Azure AI resource URL (e.g. https://my-resource.services.ai.azure.com).', 'ai-provider-for-azure-ai-foundry' ),
 				'default'           => '',
 				'show_in_rest'      => true,
 				'sanitize_callback' => 'esc_url_raw',
@@ -71,8 +71,8 @@ class ConnectorSettings {
 			self::OPTION_MODEL_NAME,
 			[
 				'type'              => 'string',
-				'label'             => __( 'Model Name', 'azure-ai-foundry' ),
-				'description'       => __( 'Auto-detected deployment names.', 'azure-ai-foundry' ),
+				'label'             => __( 'Model Name', 'ai-provider-for-azure-ai-foundry' ),
+				'description'       => __( 'Auto-detected deployment names.', 'ai-provider-for-azure-ai-foundry' ),
 				'default'           => '',
 				'show_in_rest'      => true,
 				'sanitize_callback' => 'sanitize_text_field',
@@ -85,8 +85,8 @@ class ConnectorSettings {
 			self::OPTION_CAPABILITIES,
 			[
 				'type'              => 'array',
-				'label'             => __( 'Capabilities', 'azure-ai-foundry' ),
-				'description'       => __( 'Capabilities supported by the Azure AI Foundry deployment.', 'azure-ai-foundry' ),
+				'label'             => __( 'Capabilities', 'ai-provider-for-azure-ai-foundry' ),
+				'description'       => __( 'Capabilities supported by the Azure AI Foundry deployment.', 'ai-provider-for-azure-ai-foundry' ),
 				'default'           => [ 'text_generation', 'chat_history' ],
 				'show_in_rest'      => [
 					'schema' => [

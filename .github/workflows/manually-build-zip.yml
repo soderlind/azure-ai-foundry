@@ -14,7 +14,7 @@ jobs:
     name: Build release zip
     runs-on: ubuntu-latest
     env:
-      PLUGIN_ZIP: azure-ai-foundry.zip
+      PLUGIN_ZIP: ai-provider-for-azure-ai-foundry.zip
     permissions:
       contents: write
     steps:
@@ -32,10 +32,6 @@ jobs:
           npm ci
           npm run build
 
-      - name: Build plugin
-        run: |
-          composer install --no-dev --optimize-autoloader
-
       - name: Archive Release
         uses: thedoctor0/zip-release@b57d897cb5d60cb78b51a507f63fa184cfe35554 #0.7.6
         with:
@@ -48,20 +44,13 @@ jobs:
             webpack.config.js .editorconfig .eslintignore .phpunit.result.cache
             .eslintrc.js .gitignore .gitattributes
             *.log CHANGELOG.md README.md
-            !readme.txt !src/* !build/* !vendor/*
+            !readme.txt !src/* !build/* !languages/*
 
       - name: Verify Archive Contents
         run: |
           echo "Listing $PLUGIN_ZIP entries:"
           unzip -l "$PLUGIN_ZIP" || { echo "Failed to list zip contents"; exit 1; }
           echo "Total files: $(unzip -l "$PLUGIN_ZIP" | awk 'END{print $2}')"
-
-          if unzip -l "$PLUGIN_ZIP" | grep -q "vendor/yahnis-elsts/plugin-update-checker"; then
-            echo "Plugin Update Checker is included"
-          else
-            echo "ERROR: Plugin Update Checker is missing from the release"
-            exit 1
-          fi
 
           if unzip -l "$PLUGIN_ZIP" | grep -q "build/connectors.js"; then
             echo "Built JS module is included"

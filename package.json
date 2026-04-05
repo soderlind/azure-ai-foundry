@@ -1,12 +1,18 @@
 {
-	"name": "azure-ai-foundry",
-	"version": "1.0.0",
+	"name": "ai-provider-for-azure-ai-foundry",
+	"version": "1.1.0",
 	"private": true,
 	"scripts": {
 		"build": "wp-scripts build",
 		"start": "wp-scripts start",
 		"test": "vitest run",
-		"test:watch": "vitest"
+		"test:watch": "vitest",
+		"i18n": "npm run i18n:make-pot && npm run i18n:update-po && npm run i18n:make-mo && npm run i18n:make-json && npm run i18n:make-php",
+		"i18n:make-pot": "wp i18n make-pot . languages/ai-provider-for-azure-ai-foundry.pot --exclude=node_modules,vendor,tests --domain=ai-provider-for-azure-ai-foundry",
+		"i18n:update-po": "wp i18n update-po languages/ai-provider-for-azure-ai-foundry.pot languages/",
+		"i18n:make-mo": "wp i18n make-mo languages/",
+		"i18n:make-json": "wp i18n make-json languages/ --no-purge --use-map=i18n-map.json",
+		"i18n:make-php": "wp i18n make-php languages/"
 	},
 	"devDependencies": {
 		"@testing-library/react": "^16.3.0",

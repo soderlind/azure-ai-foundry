@@ -69,7 +69,7 @@ class AzureAiFoundryModelMetadataDirectory implements ModelMetadataDirectoryInte
 		// Fall back to a generic entry.
 		$this->cached = $this->buildModelsFromCapabilities(
 			'azure-ai-foundry-model',
-			__( 'Azure AI Foundry Model', 'azure-ai-foundry' )
+			__( 'Azure AI Foundry Model', 'ai-provider-for-azure-ai-foundry' )
 		);
 
 		return $this->cached;
